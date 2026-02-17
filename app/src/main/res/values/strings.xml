@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">GharSetu</string>
+    <string name="name">Ghar Setu</string>
+    <string name="slogan">Your Directory for College and City living</string>
+    <string name="email_address">Email Address</string>
+    <string name="enter_your_email">Enter your Email</string>
+    <string name="password">Password</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="sign_in">Sign In</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="or_connect_with">Or Connect With</string>
+    <string name="google">Google</string>
+    <string name="sercured_verified_access">sercured verified access</string>
+</resources>
