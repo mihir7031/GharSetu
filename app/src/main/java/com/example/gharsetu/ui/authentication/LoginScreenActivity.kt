@@ -59,10 +59,9 @@ class LoginScreenActivity : AppCompatActivity() {
             Toast.makeText(this, "Please Enter Password", Toast.LENGTH_SHORT).show()
             return false
         }
-        else{
-            return true
-        }
+        return true
     }
+
 
     private fun togglePasswordVisibility() {
 

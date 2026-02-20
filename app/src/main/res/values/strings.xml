@@ -13,4 +13,12 @@
     <string name="or_connect_with">Or Connect With</string>
     <string name="google">Google</string>
     <string name="sercured_verified_access">sercured verified access</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="enter_your_full_name">Enter your full name</string>
+    <string name="full_name">Full Name</string>
+    <string name="continue_to_address">Continue to Address</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="sing_in">Sing In</string>
+    <string name="create_account">Create Account</string>
 </resources>
