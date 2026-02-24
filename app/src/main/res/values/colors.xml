@@ -2,7 +2,9 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="lightGrayColor">#E6E0E0</color>
     <color name="grayColor">#777171</color>
     <color name="googleColor">#3949AB</color>
     <color name="PrimaryColor">#3949AB</color>
+    <color name="blueColor">#007AFF</color>
 </resources>

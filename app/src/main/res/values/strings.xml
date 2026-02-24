@@ -21,4 +21,15 @@
     <string name="already_have_an_account">Already have an account?</string>
     <string name="sing_in">Sing In</string>
     <string name="create_account">Create Account</string>
+    <string name="instruction_for_password">Must include letters, numbers and special characters</string>
+    <string name="let_s_start_with_creating_your_account">Let\'s start with creating your account</string>
+    <string name="student_status_instruction">Access campus directories, student housing tips, and exclusive student-only local deals.</string>
+    <string name="i_am_a_student">I am a Student</string>
+    <string name="back">Back</string>
+    <string name="i_am_a_new_resident">I am a New Resident</string>
+    <string name="resident_selection_instruction">Find essential city services, utilities, local community groups, and neighbor guides.</string>
+    <string name="join_state_essentials">Join State Essentials</string>
+    <string name="status_selection">Select your Status</string>
+    <string name="status_info">This helps us customize your dashboard with the most relevant resources for your move or college life</string>
+    <string name="next_step">Next Step</string>
 </resources>

@@ -14,18 +14,16 @@
         android:background="@color/white"
         tools:context=".ui.authentication.CreateAccountScreenActivity">
 
-
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/appCompatImageView2"
+            android:id="@+id/ivBackArrow"
             android:layout_width="@dimen/_20sdp"
             android:layout_height="@dimen/_20sdp"
             android:layout_marginStart="@dimen/_20sdp"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:src="@drawable/ic_back"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:src="@drawable/baseline_arrow_back_ios_new_24"
             android:tint="@color/black"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent
-" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvNameLabel"
@@ -36,15 +34,15 @@
             android:textColor="@color/black"
             android:textSize="@dimen/_22ssp"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@+id/appCompatImageView2"
-            app:layout_constraintTop_toBottomOf="@+id/appCompatImageView2" />
+            app:layout_constraintStart_toStartOf="@+id/ivBackArrow"
+            app:layout_constraintTop_toBottomOf="@+id/ivBackArrow" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvSlogan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_12sdp"
-            android:text="Let's start with creating your account"
+            android:text="@string/let_s_start_with_creating_your_account"
             android:textColor="@color/grayColor"
             android:textSize="@dimen/_12ssp"
             app:layout_constraintStart_toStartOf="@+id/tvNameLabel"
@@ -205,7 +203,7 @@
                 android:layout_width="@dimen/_20sdp"
                 android:layout_height="@dimen/_20sdp"
                 android:padding="@dimen/_2sdp"
-                android:src="@drawable/lock"
+                android:src="@drawable/ic_lock"
                 android:tint="@color/grayColor"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -223,9 +221,37 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-<!--        <androidx.appcompat.widget.AppCompatTextView-->
-<!--            android:layout_width=""-->
-<!--            android:layout_height=""-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clInstructionPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="@+id/clPassword"
+            app:layout_constraintTop_toBottomOf="@+id/clPassword">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivAlert"
+                android:layout_width="@dimen/_16sdp"
+                android:layout_height="@dimen/_16sdp"
+                android:padding="@dimen/_2sdp"
+                android:src="@drawable/alert"
+                android:tint="@color/grayColor"
+                android:layout_marginTop="@dimen/_5sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvPasswordRequirement"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/instruction_for_password"
+                android:textColor="@color/grayColor"
+                android:textSize="@dimen/_8ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ivAlert"
+                app:layout_constraintTop_toTopOf="@+id/ivAlert" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <LinearLayout
             android:id="@+id/llContinue"
@@ -234,10 +260,10 @@
             android:background="@drawable/btn_bg"
             android:gravity="center"
             android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="@+id/llAlreadyHaveAnAccount"
+            app:layout_constraintBottom_toTopOf="@+id/clAlreadyHaveAnAccount"
             app:layout_constraintEnd_toEndOf="@+id/clPassword"
             app:layout_constraintStart_toStartOf="@+id/clPassword"
-            app:layout_constraintTop_toBottomOf="@+id/clPassword">
+            app:layout_constraintTop_toBottomOf="@+id/clInstructionPassword">
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnContinue"
@@ -252,19 +278,17 @@
                 android:textSize="@dimen/_11ssp" />
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="@dimen/_20sdp"
-                android:layout_height="@dimen/_20sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_10sdp"
-                android:src="@drawable/ic_arrow_right" />
+                android:src="@drawable/ic_arrow_right_alt" />
         </LinearLayout>
 
-       <LinearLayout
-           android:id="@+id/llAlreadyHaveAnAccount"
+       <androidx.constraintlayout.widget.ConstraintLayout
+           android:id="@+id/clAlreadyHaveAnAccount"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:layout_marginVertical="@dimen/_20sdp"
-           android:orientation="horizontal"
-
            app:layout_constraintStart_toStartOf="@+id/llContinue"
            app:layout_constraintEnd_toEndOf="@id/llContinue"
            app:layout_constraintBottom_toBottomOf="parent">
@@ -276,6 +300,8 @@
                android:text="@string/already_have_an_account"
                android:textColor="@color/grayColor"
                android:textSize="@dimen/_11sdp"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toTopOf="parent"
                />
 
            <androidx.appcompat.widget.AppCompatTextView
@@ -285,10 +311,11 @@
                android:text="@string/sing_in"
                 android:textColor="@color/PrimaryColor"
                android:textStyle="bold"
+               app:layout_constraintStart_toEndOf="@+id/tvAlreadyHaveAnAccount"
+               app:layout_constraintTop_toTopOf="@+id/tvAlreadyHaveAnAccount"
                />
 
-
-       </LinearLayout>
+       </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
