@@ -1,28 +1,27 @@
 <resources>
     <string name="app_name">GharSetu</string>
     <string name="name">Ghar Setu</string>
-    <string name="slogan">Your Directory for College and City living</string>
+    <string name="slogan">Your directory for college and city living</string>
     <string name="email_address">Email Address</string>
-    <string name="enter_your_email">Enter your Email</string>
+    <string name="enter_your_email">student@university.edu</string>
     <string name="password">Password</string>
-    <string name="enter_password">Enter Password</string>
+    <string name="enter_password">At least 8 characters</string>
     <string name="forgot_password">Forgot Password?</string>
-    <string name="sign_in">Sign In</string>
     <string name="don_t_have_an_account">Don\'t have an account?</string>
     <string name="sign_up">Sign Up</string>
     <string name="or_connect_with">Or Connect With</string>
-    <string name="google">Google</string>
+    <string name="google">Google Sign In</string>
     <string name="sercured_verified_access">sercured verified access</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="enter_your_full_name">Enter your full name</string>
+    <string name="enter_your_full_name">John Doe</string>
     <string name="full_name">Full Name</string>
     <string name="continue_to_address">Continue to Address</string>
     <string name="already_have_an_account">Already have an account?</string>
-    <string name="sing_in">Sing In</string>
+    <string name="sign_in">Sign In</string>
     <string name="create_account">Create Account</string>
-    <string name="instruction_for_password">Must include letters, numbers and special characters</string>
-    <string name="let_s_start_with_creating_your_account">Let\'s start with creating your account</string>
+    <string name="instruction_for_password">Must include letters, numbers and a symbol</string>
+    <string name="let_s_start_with_creating_your_account">Let\'s start with your basic information.</string>
     <string name="student_status_instruction">Access campus directories, student housing tips, and exclusive student-only local deals.</string>
     <string name="i_am_a_student">I am a Student</string>
     <string name="back">Back</string>

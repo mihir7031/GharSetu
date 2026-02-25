@@ -38,29 +38,36 @@ import com.example.gharsetu.databinding.ActivityCreateAccountBinding
 
         binding.ivBackArrow.setOnClickListener {
             startActivity(Intent(this,LoginScreenActivity::class.java))
-            finish()
         }
 
         binding.tvSigIn.setOnClickListener {
-            finish()
+
         }
 
         binding.btnContinue.setOnClickListener {
-//            if (validateInput()) {
-//                Toast.makeText(this, "Validation successful!", Toast.LENGTH_SHORT).show()
-//
-//            }
+            if (validateInput()) {
+                Toast.makeText(this, "Validation successful!", Toast.LENGTH_SHORT).show()
 
-            startActivity(Intent(this,UserStatusActivity::class.java))
+                startActivity(Intent(this,UserStatusActivity::class.java))
+            }
+
+
+
         }
 
         togglePasswordVisibility()
     }
 
     private fun validateInput(): Boolean {
-        val name = binding.edtName.text.toString().trim()
-        val email = binding.edtEmail.text.toString().trim()
-        val password = binding.edtPassword.text.toString().trim()
+        val name = binding.edtName.text.toString()
+        val email = binding.edtEmail.text.toString()
+        val password = binding.edtPassword.text.toString()
+
+        val hasMinLength = password.length >= 8
+        val hasUppercase = password.any { it.isUpperCase() }
+        val hasDigit = password.any { it.isDigit() }
+        val hasSpecialChar = password.any { !it.isLetterOrDigit() }
+        val hasNoSpace = !password.any { it.isWhitespace() }
 
 
         if (name.isEmpty()) {
@@ -83,8 +90,12 @@ import com.example.gharsetu.databinding.ActivityCreateAccountBinding
             return false
         }
 
-        else if (password.length < 8 && !password.any { it.isDigit() } && !password.any { it.isLetter() }) {
-            Toast.makeText(this, "Password must be at least 8 characters long,include one digit and one letter is capital", Toast.LENGTH_SHORT).show()
+        else if ( !hasMinLength ||
+            !hasUppercase ||
+            !hasDigit ||
+            !hasSpecialChar ||
+            !hasNoSpace )  {
+            Toast.makeText(this, "Invalid password format", Toast.LENGTH_SHORT).show()
             return false
         }
 

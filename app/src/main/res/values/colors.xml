@@ -7,4 +7,5 @@
     <color name="googleColor">#3949AB</color>
     <color name="PrimaryColor">#3949AB</color>
     <color name="blueColor">#007AFF</color>
+    <color name="lighBlueColor">#E6F0FF</color>
 </resources>

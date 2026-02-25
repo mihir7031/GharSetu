@@ -1,7 +1,9 @@
 package com.example.gharsetu.ui.authentication
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.InputType
+import android.util.Patterns
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -34,31 +36,43 @@ class LoginScreenActivity : AppCompatActivity() {
     private fun init() {
 
         togglePasswordVisibility()
-        preformLogin()
+        setupClickListners()
 
     }
 
-
-    private fun preformLogin(){
+    private fun setupClickListners(){
         binding.btnSignIn.setOnClickListener(){
-
             if(validateInput()){
-                Toast.makeText(this, "Clicked on the SignIn Button", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Will Redirect to the Dashboard", Toast.LENGTH_SHORT).show()
             }
         }
+
+        binding.tvSingUp.setOnClickListener(){
+            startActivity(Intent(this,CreateAccountActivity::class.java))
+        }
+
     }
 
 
     private fun validateInput(): Boolean {
 
-        if(binding.edtEmail.text?.isEmpty()==true){
-            Toast.makeText(this, "Please Enter Email", Toast.LENGTH_SHORT).show()
+        val email = binding.edtEmail.text.toString()
+        val password = binding.edtPassword.text.toString()
+
+        if (email.isEmpty()) {
+            Toast.makeText(this, "Please enter your email address", Toast.LENGTH_SHORT).show()
             return false
         }
-        else if(binding.edtPassword.text?.isEmpty()==true){
+
+        else if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+            Toast.makeText(this, "Please enter a valid email", Toast.LENGTH_SHORT).show()
+        }
+
+        else if(password.isEmpty() ==true){
             Toast.makeText(this, "Please Enter Password", Toast.LENGTH_SHORT).show()
             return false
         }
+
         return true
     }
 

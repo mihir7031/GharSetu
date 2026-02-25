@@ -18,8 +18,8 @@
             android:id="@+id/ivLogo"
             android:layout_width="@dimen/_60sdp"
             android:layout_height="@dimen/_60sdp"
-            android:src="@drawable/icon"
             android:layout_marginTop="@dimen/_40sdp"
+            android:src="@drawable/icon"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -106,11 +106,12 @@
                 android:id="@+id/edtPassword"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:background="@null"
                 android:hint="@string/enter_password"
                 android:inputType="textPassword"
-                android:background= "@null"
+                android:maxLength="10"
                 android:textColor="@color/black"
-                android:layout_marginEnd="@dimen/_10sdp"
                 android:textColorHint="@color/grayColor"
                 android:textSize="@dimen/_11ssp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -123,8 +124,8 @@
                 android:layout_width="@dimen/_20sdp"
                 android:layout_height="@dimen/_20sdp"
                 android:layout_marginEnd="@dimen/_5sdp"
-                android:tint="@color/grayColor"
                 android:src="@drawable/close_eye"
+                android:tint="@color/grayColor"
                 app:layout_constraintBottom_toBottomOf="@+id/edtPassword"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/edtPassword" />
@@ -138,7 +139,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_5sdp"
             android:text="@string/forgot_password"
-            android:textColor="@color/PrimaryColor"
+            android:textColor="@color/blueColor"
             android:textSize="@dimen/_10ssp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@+id/clPassword"
@@ -150,27 +151,54 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_20sdp"
             android:background="@drawable/btn_bg"
+            android:elevation="@dimen/_10sdp"
             android:padding="@dimen/_10sdp"
             android:text="@string/sign_in"
-            android:elevation="@dimen/_10sdp"
-            android:textSize="@dimen/_11ssp"
             android:textAllCaps="false"
             android:textColor="@color/white"
+            android:textSize="@dimen/_11ssp"
             app:layout_constraintEnd_toEndOf="@+id/clPassword"
             app:layout_constraintStart_toStartOf="@+id/clPassword"
             app:layout_constraintTop_toBottomOf="@+id/tvForgotPassword" />
+
+        <View
+            android:id="@+id/viewLeft"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:background="@color/lightGrayColor"
+            app:layout_constraintBottom_toBottomOf="@+id/tvOrConnect"
+            app:layout_constraintEnd_toStartOf="@+id/tvOrConnect"
+            app:layout_constraintStart_toStartOf="@id/btnSignIn"
+            app:layout_constraintTop_toTopOf="@+id/tvOrConnect" />
+
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvOrConnect"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_20sdp"
             android:text="@string/or_connect_with"
+            android:textAllCaps="true"
             android:textColor="@color/grayColor"
             android:textSize="@dimen/_11ssp"
+            app:layout_constraintVertical_chainStyle="spread"
+            app:layout_constraintBottom_toTopOf="@+id/btnGoogle"
             app:layout_constraintEnd_toEndOf="@+id/btnSignIn"
             app:layout_constraintStart_toStartOf="@+id/btnSignIn"
             app:layout_constraintTop_toBottomOf="@+id/btnSignIn" />
+
+        <View
+            android:id="@+id/viewRight"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:background="@color/lightGrayColor"
+            app:layout_constraintBottom_toBottomOf="@+id/tvOrConnect"
+            app:layout_constraintEnd_toEndOf="@id/btnSignIn"
+            app:layout_constraintStart_toEndOf="@+id/tvOrConnect"
+            app:layout_constraintTop_toTopOf="@+id/tvOrConnect" />
+
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnGoogle"
@@ -183,8 +211,9 @@
             android:textAllCaps="false"
             android:textColor="@color/googleColor"
             android:textSize="@dimen/_11ssp"
-            app:layout_constraintBottom_toTopOf="@id/llSignUp"
+            app:layout_constraintBottom_toTopOf="@+id/llSignUp"
             app:layout_constraintEnd_toEndOf="@+id/btnSignIn"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="@+id/btnSignIn"
             app:layout_constraintTop_toBottomOf="@+id/tvOrConnect" />
 
@@ -193,8 +222,8 @@
             android:id="@+id/llSignUp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_marginBottom="@dimen/_14sdp"
+            android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/btnGoogle"
             app:layout_constraintStart_toStartOf="@+id/btnGoogle">
@@ -206,7 +235,6 @@
                 android:text="@string/don_t_have_an_account"
                 android:textColor="@color/grayColor"
                 android:textSize="@dimen/_11ssp"
-
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/tvSingUp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -216,10 +244,10 @@
                 android:id="@+id/tvSingUp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/sign_up"
-                android:textColor="@color/PrimaryColor"
-                android:textSize="@dimen/_11ssp"
                 android:layout_marginHorizontal="@dimen/_4sdp"
+                android:text="@string/sign_up"
+                android:textColor="@color/blueColor"
+                android:textSize="@dimen/_11ssp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
