@@ -193,6 +193,7 @@
                 android:textColor="@color/black"
                 android:textColorHint="@color/grayColor"
                 android:textSize="@dimen/_11ssp"
+                android:maxLength="10"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/ivTogglePassword"
                 app:layout_constraintStart_toEndOf="@+id/ivLock"
@@ -248,18 +249,19 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="@drawable/btn_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="@dimen/_12sdp"
             android:layout_marginBottom="@dimen/_18sdp"
             app:layout_constraintBottom_toTopOf="@+id/clAlreadyHaveAnAccount"
             app:layout_constraintEnd_toEndOf="@+id/clPassword"
             app:layout_constraintStart_toStartOf="@+id/clPassword">
 
-            <androidx.appcompat.widget.AppCompatButton
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/btnContinue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@null"
-                android:clickable="true"
-                android:focusable="true"
                 android:text="@string/continue_to_address"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
@@ -275,6 +277,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_5sdp"
+                android:clickable="false"
                 android:src="@drawable/ic_arrow_forward"
                 app:layout_constraintBottom_toBottomOf="@id/btnContinue"
                 app:layout_constraintEnd_toEndOf="parent"

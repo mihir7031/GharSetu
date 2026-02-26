@@ -41,18 +41,16 @@ import com.example.gharsetu.databinding.ActivityCreateAccountBinding
         }
 
         binding.tvSigIn.setOnClickListener {
-
+            startActivity(Intent(this,LoginScreenActivity::class.java))
         }
 
-        binding.btnContinue.setOnClickListener {
-            if (validateInput()) {
-                Toast.makeText(this, "Validation successful!", Toast.LENGTH_SHORT).show()
+        binding.clContinue.setOnClickListener {
+//            if (validateInput()) {
+//                Toast.makeText(this, "Validation successful!", Toast.LENGTH_SHORT).show()
+//
+//            }
 
-                startActivity(Intent(this,UserStatusActivity::class.java))
-            }
-
-
-
+            startActivity(Intent(this,UserStatusActivity::class.java))
         }
 
         togglePasswordVisibility()

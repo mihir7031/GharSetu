@@ -41,6 +41,10 @@ class UserStatusActivity : AppCompatActivity() {
         binding.ivBackArrow.setOnClickListener {
             startActivity(Intent(this,CreateAccountActivity::class.java))
         }
+
+        binding.clNextStep.setOnClickListener(){
+            startActivity(Intent(this,OtpVerificationScreenActivity::class.java))
+        }
     }
 
 

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".ui.authentication.OtpVerificationScreenActivity">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivBackArrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:src="@drawable/baseline_arrow_back_ios_new_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivSecureOtp"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:src="@drawable/shield_lock"
+            android:tint="@color/blueColor"
+            android:padding="@dimen/_10sdp"
+            android:background="@drawable/otp_secure_bg"
+            android:layout_marginTop="@dimen/_28sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivBackArrow"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvOtpIdentity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Verify your identity"
+            android:textSize="@dimen/_22ssp"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@+id/ivSecureOtp"
+            app:layout_constraintTop_toBottomOf="@id/ivSecureOtp"
+            app:layout_constraintEnd_toEndOf="@id/ivSecureOtp"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvOtpMessage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:textSize="@dimen/_13ssp"
+            android:text="We've sent a 4 digit-code to"
+            android:gravity="center"
+            android:textColor="@color/grayColor"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvOtpIdentity"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvOtpEmail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="alex.smith@university.edu"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textSize="@dimen/_12ssp"
+            android:layout_marginTop="@dimen/_6sdp"
+            app:layout_constraintStart_toStartOf="@+id/tvOtpMessage"
+            app:layout_constraintEnd_toEndOf="@id/tvOtpMessage"
+            app:layout_constraintTop_toBottomOf="@+id/tvOtpMessage" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clOtpContainer"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_40sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvOtpEmail">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etOtpOne"
+                style="@style/OtpEditText"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/etOtpTwo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etOtpTwo"
+                style="@style/OtpEditText"
+                android:layout_marginStart="@dimen/_12sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/etOtpThree"
+                app:layout_constraintStart_toEndOf="@+id/etOtpOne"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etOtpThree"
+                style="@style/OtpEditText"
+                android:layout_marginStart="@dimen/_12sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/etOtpFour"
+                app:layout_constraintStart_toEndOf="@+id/etOtpTwo"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etOtpFour"
+                style="@style/OtpEditText"
+                android:layout_marginStart="@dimen/_12sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/etOtpThree"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvResendOtp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_28sdp"
+            android:text="Resend code in 00:45"
+            android:textStyle="bold"
+            android:textColor="@color/blueColor"
+            app:layout_constraintTop_toBottomOf="@+id/clOtpContainer"
+            app:layout_constraintStart_toStartOf="@id/clOtpContainer"
+            app:layout_constraintEnd_toEndOf="@+id/clOtpContainer"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnVerifyOtp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Verify &amp; Complete"
+            android:textColor="@color/white"
+            android:background="@drawable/btn_bg"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:padding="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:textAllCaps="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvResendOtp"
+            />
+
+
+
+        
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
