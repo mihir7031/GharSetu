@@ -307,14 +307,14 @@
 
            <androidx.appcompat.widget.AppCompatTextView
                android:id="@+id/tvSigIn"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
+               android:layout_width="46dp"
+               android:layout_height="18dp"
                android:text="@string/sign_in"
-                android:textColor="@color/blueColor"
+               android:textColor="@color/blueColor"
                android:textStyle="bold"
+               app:layout_constraintEnd_toEndOf="parent"
                app:layout_constraintStart_toEndOf="@+id/tvAlreadyHaveAnAccount"
-               app:layout_constraintTop_toTopOf="@+id/tvAlreadyHaveAnAccount"
-               />
+               app:layout_constraintTop_toTopOf="@+id/tvAlreadyHaveAnAccount" />
 
        </androidx.constraintlayout.widget.ConstraintLayout>
 
