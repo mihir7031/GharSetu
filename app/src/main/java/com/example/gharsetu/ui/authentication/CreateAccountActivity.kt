@@ -48,7 +48,7 @@ import com.example.gharsetu.databinding.ActivityCreateAccountBinding
             if (validateInput()) {
 
                 Toast.makeText(this, "Validation successful!", Toast.LENGTH_SHORT).show()
-                startActivity(Intent(this,UserStatusActivity::class.java))
+                startActivity(Intent(this,OtpVerificationScreenActivity::class.java))
             }
 
 
