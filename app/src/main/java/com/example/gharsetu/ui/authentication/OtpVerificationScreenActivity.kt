@@ -1,5 +1,6 @@
 package com.example.gharsetu.ui.authentication
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -38,9 +39,8 @@ class OtpVerificationScreenActivity : AppCompatActivity() {
     private fun setonClickListeners() {
 
         binding.ivBackArrow.setOnClickListener {
-            onBackPressedDispatcher.onBackPressed()
+            startActivity(Intent(this,CreateAccountActivity::class.java))
         }
-
     }
 }
 

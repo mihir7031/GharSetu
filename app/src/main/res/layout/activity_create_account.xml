@@ -252,10 +252,10 @@
             android:clickable="true"
             android:focusable="true"
             android:padding="@dimen/_12sdp"
-            android:layout_marginBottom="@dimen/_18sdp"
-            app:layout_constraintBottom_toTopOf="@+id/clAlreadyHaveAnAccount"
+            android:layout_marginTop="@dimen/_40sdp"
             app:layout_constraintEnd_toEndOf="@+id/clPassword"
-            app:layout_constraintStart_toStartOf="@+id/clPassword">
+            app:layout_constraintStart_toStartOf="@+id/clPassword"
+            app:layout_constraintTop_toBottomOf="@+id/tvPasswordRequirement">
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/btnContinue"
@@ -285,38 +285,39 @@
                 app:layout_constraintTop_toTopOf="@id/btnContinue" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-       <androidx.constraintlayout.widget.ConstraintLayout
-           android:id="@+id/clAlreadyHaveAnAccount"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:layout_marginVertical="@dimen/_20sdp"
-           app:layout_constraintStart_toStartOf="@+id/clContinue"
-           app:layout_constraintEnd_toEndOf="@id/clContinue"
-           app:layout_constraintBottom_toBottomOf="parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clAlreadyHaveAnAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/_20sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/clContinue"
+            app:layout_constraintStart_toStartOf="@+id/clContinue"
+            app:layout_constraintTop_toBottomOf="@+id/clContinue">
 
-           <androidx.appcompat.widget.AppCompatTextView
-               android:id="@+id/tvAlreadyHaveAnAccount"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:text="@string/already_have_an_account"
-               android:textColor="@color/grayColor"
-               android:textSize="@dimen/_11sdp"
-               app:layout_constraintStart_toStartOf="parent"
-               app:layout_constraintTop_toTopOf="parent"
-               />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvAlreadyHaveAnAccount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/already_have_an_account"
+                android:textColor="@color/grayColor"
+                android:textSize="@dimen/_11sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-           <androidx.appcompat.widget.AppCompatTextView
-               android:id="@+id/tvSigIn"
-               android:layout_width="46dp"
-               android:layout_height="18dp"
-               android:text="@string/sign_in"
-               android:textColor="@color/blueColor"
-               android:textStyle="bold"
-               app:layout_constraintEnd_toEndOf="parent"
-               app:layout_constraintStart_toEndOf="@+id/tvAlreadyHaveAnAccount"
-               app:layout_constraintTop_toTopOf="@+id/tvAlreadyHaveAnAccount" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSigIn"
+                android:layout_width="46dp"
+                android:layout_height="18dp"
+                android:text="@string/sign_in"
+                android:textColor="@color/blueColor"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvAlreadyHaveAnAccount"
+                app:layout_constraintTop_toTopOf="@+id/tvAlreadyHaveAnAccount" />
 
-       </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

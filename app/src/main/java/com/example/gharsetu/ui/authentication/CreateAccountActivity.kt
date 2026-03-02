@@ -45,12 +45,13 @@ import com.example.gharsetu.databinding.ActivityCreateAccountBinding
         }
 
         binding.clContinue.setOnClickListener {
-//            if (validateInput()) {
-//                Toast.makeText(this, "Validation successful!", Toast.LENGTH_SHORT).show()
-//
-//            }
+            if (validateInput()) {
 
-            startActivity(Intent(this,UserStatusActivity::class.java))
+                Toast.makeText(this, "Validation successful!", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this,UserStatusActivity::class.java))
+            }
+
+
         }
 
         togglePasswordVisibility()
