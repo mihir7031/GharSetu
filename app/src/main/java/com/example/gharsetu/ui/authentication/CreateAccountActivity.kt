@@ -36,26 +36,30 @@ import com.example.gharsetu.databinding.ActivityCreateAccountBinding
 
     private fun init() {
 
-        binding.ivBackArrow.setOnClickListener {
-            startActivity(Intent(this,LoginScreenActivity::class.java))
-        }
-
-        binding.tvSigIn.setOnClickListener {
-            startActivity(Intent(this,LoginScreenActivity::class.java))
-        }
-
-        binding.clContinue.setOnClickListener {
-            if (validateInput()) {
-
-                Toast.makeText(this, "Validation successful!", Toast.LENGTH_SHORT).show()
-                startActivity(Intent(this,OtpVerificationScreenActivity::class.java))
-            }
-
-
-        }
-
+        setupClickListeners()
         togglePasswordVisibility()
     }
+
+     private fun setupClickListeners(){
+         binding.ivBackArrow.setOnClickListener {
+             startActivity(Intent(this,LoginScreenActivity::class.java))
+         }
+
+         binding.tvSigIn.setOnClickListener {
+             startActivity(Intent(this,LoginScreenActivity::class.java))
+         }
+
+         binding.clContinue.setOnClickListener {
+             if (validateInput()) {
+
+                 Toast.makeText(this, "Validation successful!", Toast.LENGTH_SHORT).show()
+                 startActivity(Intent(this,OtpVerificationScreenActivity::class.java))
+             }
+
+
+         }
+
+     }
 
     private fun validateInput(): Boolean {
         val name = binding.edtName.text.toString()

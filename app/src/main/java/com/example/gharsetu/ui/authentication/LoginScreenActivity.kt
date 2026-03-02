@@ -36,11 +36,11 @@ class LoginScreenActivity : AppCompatActivity() {
     private fun init() {
 
         togglePasswordVisibility()
-        setupClickListners()
+        setupClickListeners()
 
     }
 
-    private fun setupClickListners(){
+    private fun setupClickListeners(){
         binding.btnSignIn.setOnClickListener(){
             if(validateInput()){
                 Toast.makeText(this, "Will Redirect to the Dashboard", Toast.LENGTH_SHORT).show()
