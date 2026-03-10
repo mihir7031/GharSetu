@@ -30,7 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/create_account"
-            android:layout_marginTop="@dimen/_36sdp"
+            android:layout_marginTop="@dimen/_20sdp"
             android:textColor="@color/black"
             android:textSize="@dimen/_22ssp"
             android:textStyle="bold"
@@ -52,7 +52,7 @@
             android:id="@+id/tvName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_28sdp"
+            android:layout_marginTop="@dimen/_14sdp"
             android:text="@string/full_name"
             android:textColor="@color/black"
             android:textSize="@dimen/_12ssp"
@@ -252,7 +252,7 @@
             android:clickable="true"
             android:focusable="true"
             android:padding="@dimen/_12sdp"
-            android:layout_marginTop="@dimen/_40sdp"
+            app:layout_constraintBottom_toTopOf="@+id/clAlreadyHaveAnAccount"
             app:layout_constraintEnd_toEndOf="@+id/clPassword"
             app:layout_constraintStart_toStartOf="@+id/clPassword"
             app:layout_constraintTop_toBottomOf="@+id/tvPasswordRequirement">
@@ -292,8 +292,7 @@
             android:layout_marginVertical="@dimen/_20sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/clContinue"
-            app:layout_constraintStart_toStartOf="@+id/clContinue"
-            app:layout_constraintTop_toBottomOf="@+id/clContinue">
+            app:layout_constraintStart_toStartOf="@+id/clContinue">
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvAlreadyHaveAnAccount"
@@ -308,11 +307,12 @@
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvSigIn"
-                android:layout_width="46dp"
-                android:layout_height="18dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="@string/sign_in"
                 android:textColor="@color/blueColor"
                 android:textStyle="bold"
+                android:textSize="@dimen/_11ssp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/tvAlreadyHaveAnAccount"
                 app:layout_constraintTop_toTopOf="@+id/tvAlreadyHaveAnAccount" />

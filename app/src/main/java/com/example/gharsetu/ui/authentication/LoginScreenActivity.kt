@@ -3,6 +3,7 @@ package com.example.gharsetu.ui.authentication
 import android.content.Intent
 import android.os.Bundle
 import android.text.InputType
+import android.text.method.PasswordTransformationMethod
 import android.util.Patterns
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -10,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.gharsetu.R
+import com.example.gharsetu.dashboard.DashboardActivity
 import com.example.gharsetu.databinding.ActivityLoginScreenBinding
 
 class LoginScreenActivity : AppCompatActivity() {
@@ -42,9 +44,11 @@ class LoginScreenActivity : AppCompatActivity() {
 
     private fun setupClickListeners(){
         binding.btnSignIn.setOnClickListener(){
-            if(validateInput()){
-                Toast.makeText(this, "Will Redirect to the Dashboard", Toast.LENGTH_SHORT).show()
-            }
+//            if(validateInput()){
+//                Toast.makeText(this, "Will Redirect to the Dashboard", Toast.LENGTH_SHORT).show()
+//                 }
+            startActivity(Intent(this, DashboardActivity::class.java))
+
         }
 
         binding.tvSingUp.setOnClickListener(){
@@ -84,15 +88,13 @@ class LoginScreenActivity : AppCompatActivity() {
             isPasswordVisible = !isPasswordVisible
 
             if (isPasswordVisible) {
-
-                binding.edtPassword.inputType =
-                    InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+                binding.edtPassword.transformationMethod = null
                 binding.ivTogglePassword.setImageResource(R.drawable.visible_eye)
-            } else {
 
-                binding.edtPassword.inputType =
-                    InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
-                binding.ivTogglePassword.setImageResource(R.drawable.close_eye)
+            } else {
+                binding.edtPassword.transformationMethod =
+                    PasswordTransformationMethod.getInstance()
+                binding.ivTogglePassword.setImageResource(R.drawable.ic_hide_password)
             }
 
             binding.edtPassword.setSelection(binding.edtPassword.text?.length ?: 0)
